@@ -1,0 +1,31 @@
+{{define "list"}}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Personnages – Pokemon &amp; tyradex</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <h1>Les pokemon de tyradex</h1>
+  <form action="/personnages" method="get" class="search">
+    <input type="search" name="nom" value="{{.Search}}" placeholder="Rechercher un personnage">
+    <button type="submit">Rechercher</button>
+  </form>
+  <ul class="grid">
+    {{range .Characters}}
+      <li class="card">
+        <a href="/personnages/{{.ID}}">
+          <img src="{{.Image}}" alt="{{.Name}}">
+          <strong>{{.Name}}</strong>
+          <span>{{.Status}} – {{.Species}}</span>
+        </a>
+      </li>
+    {{else}}
+      <li>Aucun pokemon ne correspond à « {{.Search}} ».</li>
+    {{end}}
+  </ul>
+  <footer>Données : Tyradex API (https://tyradex.app/docs/pokemon/pokedex)</footer>
+</body>
+</html>
+{{end}}

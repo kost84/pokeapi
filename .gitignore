@@ -1,0 +1,18 @@
+# Binaires compilés
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Tests et coverage
+*.test
+*.out
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Fichiers temporaires ou locaux
+*.log
+.env

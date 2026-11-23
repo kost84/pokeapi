@@ -2,11 +2,10 @@ package routes
 
 import (
 	"net/http"
-
 	"pokeapi/controllers"
 )
 
 func characterRoutes(mux *http.ServeMux) {
-	mux.HandleFunc("GET /personnages", controllers.ListPokemon)
-	mux.HandleFunc("GET /personnages/{id}", controllers.ShowPokemon)
+	mux.HandleFunc("GET /pokemon", controllers.ListPokemon)
+	mux.HandleFunc("GET /pokemon/{id}", controllers.ShowPokemon)
 }

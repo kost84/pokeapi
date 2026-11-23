@@ -1,0 +1,198 @@
+/* Base et typographie */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f7f9fa;
+  color: #2d3748;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #1a202c;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Liens et boutons de retour */
+a {
+  color: #3182ce;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a.back-link,
+body > a:first-of-type {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 8px 14px;
+  background-color: #edf2f7;
+  color: #4a5568;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+a.back-link:hover,
+body > a:first-of-type:hover {
+  background-color: #e2e8f0;
+  text-decoration: none;
+}
+
+/* Formulaire de recherche */
+.search {
+  display: flex;
+  gap: 10px;
+  margin: 0 auto 32px auto;
+  max-width: 500px;
+}
+
+.search input[type="search"] {
+  flex: 1;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  background-color: #ffffff;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search input[type="search"]:focus {
+  border-color: #3182ce;
+  box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.15);
+}
+
+.search button {
+  padding: 10px 18px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #e53e3e;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.search button:hover {
+  background-color: #c53030;
+}
+
+/* Grille de cartes Pokemon */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  border-color: #cbd5e0;
+}
+
+.card a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+.card img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+
+.card strong {
+  font-size: 1rem;
+  color: #2d3748;
+  text-align: center;
+}
+
+.card span {
+  font-size: 0.85rem;
+  color: #718096;
+}
+
+/* Fiche détaillée d'un Pokemon */
+body > img {
+  display: block;
+  margin: 0 auto 16px auto;
+  max-width: 220px;
+  height: auto;
+  object-fit: contain;
+}
+
+body > p {
+  text-align: center;
+  margin-bottom: 12px;
+  color: #4a5568;
+}
+
+body > div {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+/* Badges de types */
+.type,
+span.type {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  margin: 4px;
+  background-color: #edf2f7;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #2d3748;
+}
+
+.type img,
+span.type img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+/* Pied de page */
+footer {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px solid #e2e8f0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #718096;
+}

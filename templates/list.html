@@ -3,29 +3,28 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Personnages – Pokemon &amp; tyradex</title>
+  <title>Pokédex – Tyradex</title>
   <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-  <h1>Les pokemon de tyradex</h1>
-  <form action="/personnages" method="get" class="search">
-    <input type="search" name="nom" value="{{.Search}}" placeholder="Rechercher un personnage">
+  <h1>Pokédex Tyradex</h1>
+  <form action="/pokemon" method="get" class="search">
+    <input type="search" name="nom" value="{{.Search}}" placeholder="Rechercher un Pokémon">
     <button type="submit">Rechercher</button>
   </form>
   <ul class="grid">
-    {{range .Characters}}
+    {{range .Pokemon}}
       <li class="card">
-        <a href="/personnages/{{.ID}}">
-          <img src="{{.Image}}" alt="{{.Name}}">
-          <strong>{{.Name}}</strong>
-          <span>{{.Status}} – {{.Species}}</span>
+        <a href="/pokemon/{{.ID}}">
+          <img src="{{.Sprites.Regular}}" alt="{{.Name.Fr}}">
+          <strong>n° {{.ID}} - {{.Name.Fr}}</strong>
         </a>
       </li>
     {{else}}
-      <li>Aucun pokemon ne correspond à « {{.Search}} ».</li>
+      <li>Aucun Pokémon ne correspond à « {{.Search}} ».</li>
     {{end}}
   </ul>
-  <footer>Données : Tyradex API (https://tyradex.app/docs/pokemon/pokedex)</footer>
+  <footer>Données : Tyradex API (https://tyradex.app/docs)</footer>
 </body>
 </html>
 {{end}}

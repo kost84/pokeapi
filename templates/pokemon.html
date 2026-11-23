@@ -1,27 +1,26 @@
-{{define "Pokemon"}}
+{{define "pokemon"}}
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>{{.Name}} – Pokemon &amp; Tyradex</title>
+  <title>{{.Name.Fr}} – Pokédex</title>
   <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
   <a href="/pokemon">← Retour à la liste</a>
-  <h1>{{.pokedexId}} - {{.Name.Fr}}</h1>
-  <img src="{{.Sprite.Regular}}" alt="{{.Name.fr}}">
-  <p>Catégorie : {{.Categorie}} | Génération : {{.Generation}}
-  </p>
+  <h1>n° {{.ID}} - {{.Name.Fr}}</h1>
+  <img src="{{.Sprites.Regular}}" alt="{{.Name.Fr}}">
+  <p>Catégorie : {{.Category}}</p>
   <div>
-  <strong>Type : </strong>
-  {{.range Type}}
-    <spam class="type">
-         <img src="{{.Image}}" alt="{{.Name}}" width="24">
-         {{.Name}}
-    </spam>
+    <strong>Types : </strong>
+    {{range .Types}}
+      <span class="type">
+        <img src="{{.Image}}" alt="{{.Name}}" width="24">
+        {{.Name}}
+      </span>
     {{end}}
   </div>
-  <footer>Données : Tyradex API (https://tyradex.app/docs/pokemon/pokedex)</footer>
+  <footer>Données : Tyradex API (https://tyradex.app/docs)</footer>
 </body>
 </html>
 {{end}}
